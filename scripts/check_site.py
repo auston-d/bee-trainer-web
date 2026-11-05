@@ -27,6 +27,9 @@ class Document(HTMLParser):
         for attr in ('href', 'src'):
             if attr in attrs:
                 url = urlsplit(attrs[attr])
+                if tag == 'a' and attr == 'href' and url.scheme == 'mailto':
+                    assert re.fullmatch(r"mailto:[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", attrs[attr]), f'Invalid contact link: {self.path}'
+                    continue
                 assert not url.scheme and not url.netloc, f'External URL: {self.path}'
                 self.links.append(url)
 
