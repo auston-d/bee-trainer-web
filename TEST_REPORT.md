@@ -1,11 +1,12 @@
 # November 5, 2026 content validation
 
+- Public support mailbox `beetrainer.studio@gmail.com` is linked consistently across Support, Terms and both privacy pages. The checker permits mailto contact links while continuing to reject external runtime dependencies.
 - Updated all five HTML pages. English and Simplified Chinese privacy policies retain matching sections and technical claims.
 - `python3 scripts/check_site.py`: PASS for metadata, local links/fragments, reciprocal language links, local CSS and both version JSON contracts.
 - Browser inspection: desktop landing rendering, Support navigation and expandable backup FAQ passed. At a 390 × 844 mobile viewport, all five pages had no horizontal overflow; landing and Chinese privacy screenshots were visually inspected. No cross-browser or real-device claim is made.
 - Live EdgeOne landing, English privacy, Support, Terms and iOS JSON returned successfully before edits. These checks describe the existing deployed draft, not publication of this change.
 - The iOS release contract remains schema 1 with both versions at `0.0.0`, an empty Store URL and disabled future feature flags. These are intentional pre-release values until a real published listing exists.
-- Outstanding: real owner identity/contact/effective date; host and support-email retention/region settings; intended audience; final legal/privacy review; actual EdgeOne release branch and deployment verification. Do not treat this content update as App Store approval.
+- Outstanding: real owner identity/effective date; host and support-email retention/region settings; intended audience; final legal/privacy review; actual EdgeOne release branch and deployment verification. Do not treat this content update as App Store approval.
 
 ---
 
