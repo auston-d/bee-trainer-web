@@ -70,7 +70,7 @@ Native apps determine optional/mandatory upgrades, cache the last valid configur
 
 Search all HTML for `CONFIRM`, `确认`, and `pending`, and review this checklist before production:
 
-- Replace `[CONFIRM SUPPORT EMAIL]` throughout support, English privacy, and terms, and `[确认支持邮箱]` in Chinese privacy. Contact text on the landing page also requires replacement. Contact is deliberately plain text until a real address exists; add matching `mailto:` links if desired. Search all occurrences instead of changing only one page.
+- Public support contact is `beetrainer.studio@gmail.com`, supplied by the owner on November 5, 2026. Support, Terms and both privacy languages use matching `mailto:` links. Confirm mailbox access and retention before policy finalization. Search all occurrences instead of changing only one page.
 - Supply the real developer/legal name and effective dates; do not invent company details.
 - The pages now describe the planned first iOS release: free/unlimited wordbooks, on-device English speech and OCR, keyboard input, offline WordNet, local review and both backup formats. The App Store download remains unavailable until approval. Confirm the final audience/age rating before submission.
 - Technical descriptions were checked against the native implementation on November 5, 2026: no saved audio or server recognition fallback, no first-release backend endpoint, no accounts/cloud sync/ads/third-party analytics SDK, local practice/diagnostic text, user-controlled exports, and separate saved-image/cache cleanup. Final App Store privacy answers still depend on host logging, support-mail handling and audience details.
@@ -87,4 +87,4 @@ The HTML policies are marked drafts. Local implementation readiness is not legal
 
 ## November 5 content update
 
-Updated the landing, Support, Terms and both privacy-language pages from the current native implementation. No account details, mailbox address, legal identity, effective date, child-audience selection or hosting retention values were invented. Those placeholders remain visible until supplied and reviewed. Neither version JSON was changed: the real App Store ID/URL is not known and no release has been verified. See TEST_REPORT.md for this update's checks.
+Updated the landing, Support, Terms and both privacy-language pages from the current native implementation. The owner supplied the public support mailbox `beetrainer.studio@gmail.com`. No Apple Account details, legal identity, effective date, child-audience selection or hosting retention values were invented. Those placeholders remain visible until supplied and reviewed. Neither version JSON was changed: the real App Store ID/URL is not known and no release has been verified. See TEST_REPORT.md for this update's checks.
