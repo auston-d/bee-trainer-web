@@ -4,7 +4,7 @@ Static landing, English/Simplified Chinese privacy, support, terms, and public n
 
 ## Local development
 
-Use the existing isolated checkout; no worktree is needed. Changes belong on `feature/*` branches (current implementation: `feature/static-website`). Review locally, then open a PR from `feature/*` into `develop`. Review that PR before merging. A separate reviewed promotion PR from `develop` into `main` controls production release. The public site is reachable at https://bee-trainer-web.edgeone.dev/. The active EdgeOne production branch must be confirmed before promoting changes; `main` currently contains only the initial README, while `develop` contains the static site.
+Use the existing isolated checkout; no worktree is needed. Changes belong on `feature/*` branches (current implementation: `feature/static-website`). Review locally, then open a PR from `feature/*` into `develop`. Review that PR before merging: the owner confirms `develop` is the EdgeOne production branch, so a merge there publishes the site. Do not promote to `main` as a deployment step unless the provider configuration is explicitly changed. The public site is reachable at https://bee-trainer-web.edgeone.dev/. The owner confirmed on November 5, 2026 that EdgeOne deploys `develop`; `main` currently contains only the initial README.
 
 With Python 3 installed, from this repository:
 
@@ -26,11 +26,11 @@ Open the local server in your own development browser. Stop it with Ctrl-C. This
 
 ## Tencent EdgeOne Pages (Makers)
 
-The existing EdgeOne site was reachable over HTTPS on November 5, 2026. The provider console settings, automatic deployment branch and logging/retention have not been inspected. For setup or verification in Tencent's current Pages console:
+The existing EdgeOne site was reachable over HTTPS on November 5, 2026. The owner confirmed `develop` as the deployment branch. Other provider console settings, including logging/retention, have not been inspected. For setup or verification in Tencent's current Pages console:
 
 1. Select the free/Makers plan and check current quotas, eligibility, available deployment regions, and free subdomain terms. Do not enable paid options inadvertently.
 2. Create a Pages project, connect GitHub through Tencent's authorized integration, and select `auston-d/bee-trainer-web`.
-3. Select `main` as the production branch and automatic deployments on changes merged into `main`. Keep this feature branch out of production until owner review. Preview branches, if enabled, must be reviewed for public exposure of draft policies.
+3. Preserve `develop` as the existing production branch, as confirmed by the owner. Automatic deployment runs when reviewed changes merge into `develop`. Preview branches, if enabled, must be reviewed for public exposure of draft policies.
 4. Choose the static/no-framework option. Leave install/build commands empty and set the published output directory to the repository root (`.`), according to the console's current controls. No server runtime or functions are needed.
 5. Use the generated free project subdomain and enable/verify HTTPS. A custom domain can be configured later; internal links do not depend on the provider hostname.
 6. After deployment, request every route directly (including nested directory indexes), test all links on desktop/mobile, and confirm both JSON endpoints return status 200 and `Content-Type: application/json` over HTTPS. Check for SPA rewrites, authentication, or HTML error pages that could break JSON.
@@ -71,7 +71,7 @@ Native apps determine optional/mandatory upgrades, cache the last valid configur
 Search all HTML for `CONFIRM`, `确认`, and `pending`, and review this checklist before production:
 
 - Public support contact is `beetrainer.studio@gmail.com`, supplied by the owner on November 5, 2026. Support, Terms and both privacy languages use matching `mailto:` links. Confirm mailbox access and retention before policy finalization. Search all occurrences instead of changing only one page.
-- Supply the real developer/legal name and effective dates; do not invent company details.
+- The owner selected Sylvia as the public operator name and `beetrainer.studio@gmail.com` as support. Policies are effective November 5, 2026. This is a public operator label, not a claim of company registration or a change to the Apple account seller identity.
 - The pages now describe the planned first iOS release: free/unlimited wordbooks, on-device English speech and OCR, keyboard input, offline WordNet, local review and both backup formats. The App Store download remains unavailable until approval. Confirm the final audience/age rating before submission.
 - Technical descriptions were checked against the native implementation on November 5, 2026: no saved audio or server recognition fallback, no first-release backend endpoint, no accounts/cloud sync/ads/third-party analytics SDK, local practice/diagnostic text, user-controlled exports, and separate saved-image/cache cleanup. Final App Store privacy answers still depend on host logging, support-mail handling and audience details.
 - Confirm hosting request logs and remote-config request metadata. Keep English and Chinese policies equivalent after every edit.
@@ -79,7 +79,7 @@ Search all HTML for `CONFIRM`, `确认`, and `pending`, and review this checklis
 - Replace the App Store availability badge with a real download link only after approval. Do not add an Android download link until available.
 - Replace version sentinels and verify native-client behavior, public JSON MIME types, caching, HTTPS, and real mainland reachability.
 
-The HTML policies are marked drafts. Local implementation readiness is not legal approval or production release readiness.
+Public pages contain no placeholder tokens. Native submission still requires an accurate App Store privacy questionnaire, age rating and provider-specific data review. Website publication does not establish App Store approval or legal certification.
 
 ## Validation
 
@@ -87,4 +87,6 @@ The HTML policies are marked drafts. Local implementation readiness is not legal
 
 ## November 5 content update
 
-Updated the landing, Support, Terms and both privacy-language pages from the current native implementation. The owner supplied the public support mailbox `beetrainer.studio@gmail.com`. No Apple Account details, legal identity, effective date, child-audience selection or hosting retention values were invented. Those placeholders remain visible until supplied and reviewed. Neither version JSON was changed: the real App Store ID/URL is not known and no release has been verified. See TEST_REPORT.md for this update's checks.
+Updated the landing, Support, Terms and both privacy-language pages from the current native implementation. The owner supplied the public support mailbox `beetrainer.studio@gmail.com`. Sylvia is the owner-selected public operator. No Apple Account identity, company registration, child-audience selection or hosting retention values were invented. Public wording describes provider processing without asserting unverified retention periods. Remaining submission questions are tracked here, not presented as unfinished public-page text. Neither version JSON was changed: the real App Store ID/URL is not known and no release has been verified. See TEST_REPORT.md for this update's checks.
+
+Publication target confirmed by the owner: `develop`. Recheck the live EdgeOne routes and contact links after the reviewed merge. The age rating and hosting/mail review remain App Store submission tasks.
