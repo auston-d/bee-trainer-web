@@ -30,7 +30,10 @@ class Document(HTMLParser):
                 if tag == 'a' and attr == 'href' and url.scheme == 'mailto':
                     assert re.fullmatch(r"mailto:[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", attrs[attr]), f'Invalid contact link: {self.path}'
                     continue
-                assert not url.scheme and not url.netloc, f'External URL: {self.path}'
+                if tag == 'a' and attr == 'href' and url.scheme == 'https':
+                    assert url.hostname and url.username is None and url.password is None, f'Invalid information link: {self.path}'
+                    continue
+                assert not url.scheme and not url.netloc, f'External runtime URL: {self.path}'
                 self.links.append(url)
 
 pages = {}
