@@ -1,3 +1,17 @@
+# November 5, 2026 content validation
+
+- Public support mailbox `beetrainer.studio@gmail.com` is linked consistently across Support, Terms and both privacy pages. The checker permits mailto and informational HTTPS anchors while continuing to reject external runtime dependencies.
+- Updated all five HTML pages. English and Simplified Chinese privacy policies retain matching sections and technical claims. Public operator, contact and effective date are filled; no CONFIRM/确认 placeholders remain in HTML.
+- `python3 scripts/check_site.py`: PASS for metadata, local links/fragments, reciprocal language links, local CSS and both version JSON contracts.
+- Browser inspection: desktop landing rendering, Support navigation and expandable backup FAQ passed. At a 390 × 844 mobile viewport, all five pages had no horizontal overflow; landing and Chinese privacy screenshots were visually inspected. No cross-browser or real-device claim is made.
+- Live EdgeOne landing, English privacy, Support, Terms and iOS JSON returned successfully before edits. These checks describe the existing deployed draft, not publication of this change.
+- The iOS release contract remains schema 1 with both versions at `0.0.0`, an empty Store URL and disabled future feature flags. These are intentional pre-release values until a real published listing exists.
+- Outstanding: real host and support-email retention/region review; final App Store audience/privacy answers; deployment verification after merging to owner-confirmed `develop`. Sylvia and the support mailbox are owner-confirmed, and policy effective date is November 5, 2026. Do not treat this content update as App Store approval.
+
+---
+
+## Historical validation
+
 # Local validation report
 
 Executed October 13, 2026 on `feature/static-website`.
