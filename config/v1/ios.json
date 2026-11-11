@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "latestVersion": "0.0.0",
+  "latestVersion": "1.0.0",
   "minimumSupportedVersion": "0.0.0",
   "updateMessage": "",
-  "storeUrl": "",
+  "storeUrl": "https://apps.apple.com/app/id6831486088",
   "features": {
     "wordAssociation": false,
     "imageGeneration": false
