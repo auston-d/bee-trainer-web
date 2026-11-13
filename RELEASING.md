@@ -16,7 +16,7 @@
 | Dev | bee-trainer-web-dev.edgeone.dev | bee-trainer-api-dev.edgeone.dev | develop |
 | Production | bee-trainer-web.edgeone.dev | bee-trainer-api.edgeone.dev | main |
 
-Set `BEE_DEPLOY_ENV=development` on Dev projects and `BEE_DEPLOY_ENV=production` on production projects. Do not set a fixed commit SHA; builds obtain it from the checked-out Git repository. The Dev projects use their own primary deployment slot (called Production by EdgeOne); they are still development services, separate from the live projects. Other branches are not connected to live traffic.
+Set `BEE_DEPLOY_ENV=development` and `BEE_DEPLOY_BRANCH=develop` on Dev projects; set `BEE_DEPLOY_ENV=production` and `BEE_DEPLOY_BRANCH=main` on production projects. Do not set a fixed commit SHA; builds obtain it from the checked-out Git repository. The Dev projects use their own primary deployment slot (called Production by EdgeOne); they are still development services, separate from the live projects. Other branches are not connected to live traffic.
 
 Blob namespaces belong to their project. Dev and Production API projects therefore have distinct `bee-trainer-shares` stores. Never put an operator token into the app, web config or build metadata. Dev remote config must point to the Dev API, and production config must point to the Production API.
 
