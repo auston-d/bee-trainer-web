@@ -1,0 +1,15 @@
+import { cp, mkdir, rm, writeFile, readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { buildMetadata } from './build-metadata.mjs';
+const root = new URL('../', import.meta.url);
+const output = new URL('../dist/', import.meta.url);
+const info = buildMetadata(fileURLToPath(root));
+await rm(output, { recursive: true, force: true });
+await mkdir(output, { recursive: true });
+for (const name of ['index.html', 'assets', 'privacy', 'support', 'terms', 'config']) await cp(new URL(name, root), new URL(name, output), { recursive: true });
+const configURL = new URL('config/v1/ios.json', output);
+const config = JSON.parse(await readFile(configURL, 'utf8'));
+if (info.environment === 'development') config.shareClaim.apiBaseUrl = 'https://bee-trainer-api-dev.edgeone.dev/api';
+else if (info.environment !== 'production' && info.environment !== 'local') throw new Error('Unknown environment');
+await writeFile(configURL, JSON.stringify(config, null, 2) + '\n');
+await writeFile(new URL('version.json', output), JSON.stringify(info) + '\n');
