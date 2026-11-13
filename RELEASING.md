@@ -25,3 +25,9 @@ Blob namespaces belong to their project. Dev and Production API projects therefo
 Use the default Xcode scheme Run / Debug: `Bee Trainer Dev`, bundle ID `com.beetrainer.mobile.dev`, Dev remote-config URL. It installs alongside the App Store app, with separate sandbox data. Archive / Release retains `Bee Trainer`, bundle ID `com.beetrainer.mobile`, and Production remote config. Do not select Release for ordinary on-device Run, because matching bundle IDs replace the installed app.
 
 Check version endpoints and release config, share/redeem, old-code compatibility, and paywall cancellation on Dev before opening the production PR. A simulator pass does not replace physical-device background upload or StoreKit validation.
+
+## GitHub enforcement
+
+The public web repository protects `main` with required PRs, the `validate` CI check, up-to-date branches and resolved conversations. Administrator bypass, force pushes and branch deletion are disabled. Because this is a solo maintainer workflow, there is no separate approving-review quorum; the maintainer reviews and merges the PR after verification.
+
+The API repository remains private on GitHub Free. The owner explicitly chose to retain Free and use the same PR/CI/release process without technical branch-protection enforcement for this private repository. Do not claim direct main pushes are blocked there. Never publish the repository or purchase a plan automatically.
