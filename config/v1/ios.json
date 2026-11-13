@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "latestVersion": "1.0.0",
+  "minimumSupportedVersion": "0.0.0",
+  "updateMessage": "",
+  "storeUrl": "https://apps.apple.com/app/id6831486088",
+  "features": {
+    "wordAssociation": false,
+    "imageGeneration": false
+  },
+  "shareClaim": {
+    "enabled": true,
+    "apiBaseUrl": "https://bee-trainer-api.edgeone.dev/api",
+    "codeLength": 6,
+    "maxWords": 2000,
+    "maxPayloadBytes": 900000,
+    "expiryMonths": 6,
+    "maxShareAttempts": 5,
+    "shareAttemptWindowSeconds": 300
+  }
+}
