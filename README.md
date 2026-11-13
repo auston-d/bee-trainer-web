@@ -1,3 +1,5 @@
+> Release process: see [RELEASING.md](RELEASING.md). Production follows `main`; `develop` deploys to the separate Dev project.
+
 # Bee Trainer website
 
 Static landing, English/Simplified Chinese privacy, support, terms, and public native-app version configuration. Plain UTF-8 HTML and shared CSS; no JavaScript, build, npm packages, backend, tracking, or externally loaded assets.

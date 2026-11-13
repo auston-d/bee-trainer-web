@@ -1,0 +1,18 @@
+name: Validate
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [develop, "release/**", "codex/**"]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: python3 scripts/check_site.py
+      - run: BEE_DEPLOY_ENV=development node scripts/build-site.mjs
