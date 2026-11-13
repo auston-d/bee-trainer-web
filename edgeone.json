@@ -1,0 +1,4 @@
+{
+  "buildCommand": "python3 scripts/check_site.py && node scripts/build-site.mjs",
+  "outputDirectory": "dist"
+}
